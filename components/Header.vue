@@ -5,7 +5,7 @@
     </div>
 
     <div class="col-lg-11">
-      <h1 class="text-primary">PERPUS DIGITAL</h1>
+      <h1 class="tittle">PERPUS DIGITAL</h1>
       <address class="alamat mb-0">
         SMKN 4 Tasikmalaya <p class="mb-0">JL.Depok, Sukamenak, Purbaratu</p>
       </address>
@@ -16,6 +16,8 @@
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
 .header {
   height: 21%;
 }
@@ -26,12 +28,20 @@
   padding-left: 10px;
 }
 
-.text-primary {
+.tittle text-primary {
   font-size: 60px;
+  font-style: italic;
   padding-left: 10px;
   opacity: 0.6;
-  color: lighten(rgba(0, 191, 255, 0.5));
+}
 
+h1 {
+  font-family: "Michroma";
+  font-size: 70px;
+  margin: 0;
+  lighting-color: #249cff;
+  opacity: 0.6;
+  color: #249cff;
 }
 
 .alamat {
