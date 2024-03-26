@@ -51,7 +51,7 @@
       </tbody>
     </table>
     <div class="button">
-      <NuxtLink class="kembali btn rounded-1" to="/home">kembali</NuxtLink>
+      <NuxtLink class="kembali btn rounded-1" to="/">kembali</NuxtLink>
       <NuxtLink class="caribuku btn rounded-1" to="/search">Cari buku</NuxtLink>
     </div>
   </div>

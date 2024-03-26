@@ -6,8 +6,7 @@
 
     <div class="col-lg-11">
       <h1 class="tittle">PERPUS DIGITAL</h1>
-      <address class="alamat mb-0">
-        SMKN 4 Tasikmalaya <p class="mb-0">JL.Depok, Sukamenak, Purbaratu</p>
+      <address class="alamat mb-0">SMKN 4 Tasikmalaya <p>JL.Depok, Sukamenak, Purbaratu</p>
       </address>
     </div>
   </div>
@@ -17,6 +16,7 @@
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400..840;1,400..840&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 .header {
   height: 21%;
@@ -28,24 +28,35 @@
   padding-left: 10px;
 }
 
-.tittle text-primary {
-  font-size: 60px;
-  font-style: italic;
-  padding-left: 10px;
-  opacity: 0.6;
-}
-
-h1 {
+.tittle {
   font-family: "Michroma";
-  font-size: 70px;
+  font-size: 60px;
   margin: 0;
   lighting-color: #249cff;
-  opacity: 0.6;
   color: #249cff;
+  font-style: italic;
+  font-weight: 600;
+  padding-left: 10px;
+  opacity: 1;
+  line-height: 1.2em;
+  text-shadow:
+    0 0 #ffffff,
+    0 1.2em #ffffff;
+  overflow: hidden;
+  transition: .5s;
+  cursor: pointer;
 }
+
+.tittle:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow:
+    0 -1.3em #249cff;
+}
+
 
 .alamat {
   padding-left: 10px;
+  font-family: "Andada+Pro";
 }
 
 .tp {

@@ -1,68 +1,71 @@
 <template>
   <div class="container-fluid">
-    <div class="row my-">
+    <div class="row py-4">
       <div class="col-lg-6">
-        <div class="card rounded-4 p-3  ms-3">
-          <h2 class="text-white display-3">Form Pengunjung</h2>
-          <div class="mb-3">
-            <input type="text" class="form-control rounded-2" placeholder="Nama">
+        <div class="form card rounded-4" @submit.prevent="kirimData">
+          <h2 class="judul-form text-white display-3">Form Pengunjung</h2>
+          <div class="mb-1 p-5 pt-0 py-0">
+            <input v-model="form.nama" type="text" class="form-control rounded-2" placeholder="Nama">
           </div>
-          <div class="mb-3">
-            <select class="form-control form-control-lg form-select rounded-2">
+          <div class="mt-2 mb-1 p-5 pt-0 py-0">
+            <select class="form-control form-select rounded-2">
               <option value="">KATEGORI</option>
+              <option value="">Keanggotaan</option>
               <option value="umum">Umum</option>
               <option value="staff">Staff</option>
               <option value="siswa">Siswa</option>
               <option value="guru">Guru</option>
             </select>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 p-5 pt-0 py-0">
             <div class="row">
               <div class="mb-0">
-                <select class="form-control form-control-lg form-select rounded-2">
+                <select class="form-control form-select rounded-2">
                   <option value="">KELAS</option>
                 </select>
               </div>
               <div class="option">
                 <div class="col-md p-0">
-                  <select class="form-control form-control-lg form-select rounded-2 mt-1">
-                    <option value="X">X</option>
-                    <option value="XI">XI</option>
-                    <option value="XII">XII</option>
+                  <select class="form-control form-select rounded-2 ">
+                    <option class="opsi" value="X">X</option>
+                    <option class="opsi" value="XI">XI</option>
+                    <option class="opsi" value="XII">XII</option>
                   </select>
                 </div>
                 <div class="col-md p-0">
-                  <select class="form-control form-control-lg form-select rounded-2 mt-1">
-                    <option value="PPLG">PPLG</option>
-                    <option value="TJKT">TJKT</option>
-                    <option value="TSM">TSM</option>
-                    <option value="TOI">TOI</option>
-                    <option value="DKV">DKV</option>
+                  <select class="form-control form-select rounded-2 ">
+                    <option class="opsi" value="PPLG">PPLG</option>
+                    <option class="opsi" value="TJKT">TJKT</option>
+                    <option class="opsi" value="TSM">TSM</option>
+                    <option class="opsi" value="TOI">TOI</option>
+                    <option class="opsi" value="DKV">DKV</option>
                   </select>
                 </div>
                 <div class="col-md p-0">
-                  <select class="form-control form-control-lg form-select rounded-2 mt-1">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                  <select class="form-control form-select rounded-2 ">
+                    <option class="opsi" value="1">1</option>
+                    <option class="opsi" value="2">2</option>
+                    <option class="opsi" value="3">3</option>
+                    <option class="opsi" value="4">4</option>
                   </select>
                 </div>
               </div>
-              <div class="mb-3">
-                <select class="form-control form-control-lg form-select rounded-2 mt-1">
+              <div class="mb-1">
+                <select class="form-control form-select rounded-2 mt-1">
                   <option value="">KEPERLUAN</option>
                 </select>
               </div>
-              <div class="mb-3">
-                <select class="form-control form-control-lg form-select rounded-2">
-                  <option value="baca">membaca di tempat</option>
-                  <option value="pinjam">meminjam</option>
-                  <option value="mengembalikan">mengembalikan buku</option>
-                  <option value="">lainnya</option>
+              <div class="mb-1 pt-1 py-1">
+                <select class="form-control form-select rounded-2">
+                  <option class="opsi" value="baca">Membaca di tempat</option>
+                  <option class="opsi" value="pinjam">Meminjam</option>
+                  <option class="opsi" value="mengembalikan">Mengembalikan buku</option>
+                  <option class="opsi" value="lainnya">Lainnya</option>
                 </select>
               </div>
-              <button type="submit" class="kirim btn rounded-2">kirim</button>
+              <div class="pt-4 py-4">
+                <NuxtLink type="submit" class="kirim btn rounded-1" to="/history">kirim</NuxtLink>
+              </div>
             </div>
           </div>
         </div>
@@ -72,6 +75,8 @@
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 .container-fluid {
   background-image: url('@/assets/img/bg-home-kunjungan.jpeg');
   width: 100%;
@@ -80,13 +85,28 @@
   padding-top: 140px;
 }
 
+.tittle {
+  font-family: "Michroma";
+}
+
+h2 {
+  font-family: "Josefin+Sans";
+  font-weight: 100;
+  font-style: normal;
+}
+
 .text-white {
   font-weight: 400;
 }
 
+
+.form-control {
+  padding: 3px;
+}
+
 .card {
   background-color: rgba(0, 0, 0, 0.5);
-  height: 100%;
+  /* height: auto; */
   box-shadow: 1px 1px 10px #424242;
   width: 80rem;
   text-align: center;
@@ -94,9 +114,19 @@
   margin-right: 20px;
 }
 
+.opsi {
+  background-color: #ffffff;
+  opacity: 0.5;
+}
+
 .option {
+  height: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
+}
+
+.col-md p-0 {
+  height: 35px;
 }
 
 .kirim {
@@ -105,6 +135,45 @@
   height: 30px;
   padding-top: 0px;
   text-align: center;
-  margin-left: 10px;
 }
 </style>
+
+<script setup>
+
+const supabase = useSupabaseClient()
+
+const members = ref([])
+const objectives = ref([])
+
+const form = ref({
+  nama:"",
+  keanggotaan:"",
+  tingkat:"",
+  jurusan:"",
+  kelas:"",
+  keperluan:"",
+})
+
+const kirimData = async ( ) => {
+  const { error} = await supabase.from('pengunjung').insert([form.value])
+  if(!error) navigateTo('/pengunjung')
+}
+
+const getKeanggotaan = async ( ) => {
+  const { data, error } = await supabase.from('keanggotaan').select('*')
+  if(data) members.value = data
+}
+
+const getKeperluan = async ( ) => {
+  const { data, error} = await supabase.from('keperluan').select('*')
+  if(data) objectives.value = data
+}
+
+onMounted(() => {
+  getKeanggotaan ()
+  getKeperluan ()
+})
+
+
+
+</script>
