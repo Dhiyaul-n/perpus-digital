@@ -236,10 +236,19 @@ td {
   font-size: 10px;
 }
 
-.table-responsive{
-  padding-bottom: 50px;
+.tabel{
+  width: 100%;
   padding-right: 50px;
-  width: 90%;
+}
+
+.table-responsive{
+  font-size: 10px;
+  position: relative;
+  right: 20px;
+  padding-bottom: 50px;
+  margin: 0;
+  margin-right: 50px;
+  width: 100%;
 }
 
 
