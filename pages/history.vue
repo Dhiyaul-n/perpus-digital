@@ -133,6 +133,7 @@ onMounted (() => {
 
 .table-responsive{
   padding-bottom: 5%;
+  width: 95%;
 }
 
 .top-text-center{
@@ -142,9 +143,6 @@ onMounted (() => {
   border: 2px solid black;
 }
 
-.tabel {
-  width: 95%;
-}
 
 
 td {
@@ -240,6 +238,8 @@ td {
 
 .table-responsive{
   padding-bottom: 50px;
+  padding-right: 50px;
+  width: 90%;
 }
 
 
