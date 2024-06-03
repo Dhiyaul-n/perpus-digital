@@ -79,9 +79,20 @@ onMounted (() => {
 <style scoped>
 
 
-.container-fluid {
+.background {
   background-image: url('@/assets/img/bg-home-cari-buku.jpg');
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
   background-size: cover;
+  background-position: center;
+}
+
+
+.container-fluid {
   width: 100%;
   height: 100%;
   padding-top: 140px;
@@ -189,6 +200,18 @@ td {
 }
 
 @media screen and (max-width: 430px){
+
+  .background {
+  background-image: url('@/assets/img/bg.png');
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+}
 
 .jumlah-pengunjung{
   position: relative;
