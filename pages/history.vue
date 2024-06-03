@@ -202,7 +202,7 @@ td {
 @media screen and (max-width: 430px){
 
   .background {
-  background-image: url('@/assets/img/bg.png');
+  background-image: url('@/assets/img/bg-mobile.png');
   position: fixed;
   top: 0;
   bottom: 0;
