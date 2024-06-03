@@ -161,7 +161,7 @@ onMounted(() => {
 
 /* UKURAN TABLET */
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 720px){
 
   .container-fluid {
   width: 100%;
@@ -220,6 +220,10 @@ onMounted(() => {
     width: 100%;
     padding: 0px;
     border: rgba(255, 255, 255, 0.5) 15px solid;
+  }
+
+  .judul{
+    font-size: 15px;
   }
 
   .pengarang {

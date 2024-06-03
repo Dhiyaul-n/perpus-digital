@@ -166,7 +166,7 @@ onMounted(() => {
 
 }
 
-@media screen and (max-width: 414px){
+@media screen and (max-width: 430px){
   .book {
   display: grid;
   grid-template-columns: auto auto ;
