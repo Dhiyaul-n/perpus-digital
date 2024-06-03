@@ -120,6 +120,10 @@ onMounted (() => {
   font-weight: lighter;
 }
 
+.table-responsive{
+  padding-bottom: 5%;
+}
+
 .top-text-center{
   font-weight: 300;
   font-family: "Alata";
@@ -186,7 +190,7 @@ td {
 
 @media screen and (max-width: 430px){
 
-  .jumlah-pengunjung{
+.jumlah-pengunjung{
   position: relative;
   font-size: 20px;
   font-weight: 500;
@@ -211,11 +215,11 @@ td {
   font-size: 10px;
 }
 
-  .tabel {
-  width: 550px;
-  padding-bottom: 5%;
+.table-responsive{
+  padding-bottom: 50px;
 }
+
+
 }
 
 </style>
-
