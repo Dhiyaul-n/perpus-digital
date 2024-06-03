@@ -213,6 +213,7 @@ td {
 
 .jumlah-pengunjung{
   position: relative;
+  right: 0px;
   font-size: 20px;
   font-weight: 500;
   top: 25%;
@@ -224,7 +225,12 @@ td {
   opacity: 1;
 }
 
+
 .card {
+  position: relative;
+  right: 7%;
+  padding-left: 0;
+  padding-right: 20px;
   padding: 0;
   font-size: 20px;
   height: 30px;
