@@ -222,27 +222,28 @@ onMounted(() => {
     border: rgba(255, 255, 255, 0.5) 15px solid;
   }
 
-  .judul{
-    font-size: 15px;
-  }
-
   .pengarang {
     font-size: 15px;
+    padding-left: 5px;
   }
 
   .tahun-terbit {
     font-size: 15px;
+    padding-left: 5px;
   }
 
   .lokasi {
     font-size: 15px;
+    padding-left: 5px;
   }
   .kategori {
     font-size: 15px;
+    padding-left: 5px;
   }
 
   .tittle{
     font-size: 20px;
+    padding-left: 5px;
   }
 
   #desc1{

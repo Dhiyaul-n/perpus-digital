@@ -170,7 +170,7 @@ onMounted(() => {
   .book {
   display: grid;
   grid-template-columns: auto auto ;
-  padding-left: 50px;
+  padding-left: 8%;
   }
 
 }

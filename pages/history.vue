@@ -185,6 +185,20 @@ td {
 }
 
 @media screen and (max-width: 430px){
+
+  .jumlah-pengunjung{
+  position: relative;
+  font-size: 20px;
+  font-weight: 500;
+  top: 25%;
+  color: black;
+  font-family: "Alata";
+  opacity: 1;  
+  text-align: center;
+  font-size: 24px;
+  opacity: 1;
+}
+
   .tabel {
   width: 550px;
   padding-bottom: 5%;
