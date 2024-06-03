@@ -5,45 +5,45 @@
         <p class="jumlah-pengunjung">{{ visitors.length }} PENGUNJUNG</p>
     </div>
     <div class="table-responsive">
-    <table class="tabel table rounded-pil">
-      <thead>
-        <tr class="table-top">
-          <th class="top-text-center">No</th>
-          <th class="top-text-center">Kategori</th>
-          <th class="top-text-center">Nama</th>
-          <th class="top-text-center">Kelas</th>
-          <th class="top-text-center">Tanggal</th>
-          <th class="top-text-center">Waktu</th>
-          <th class="top-text-center">Keperluan</th>
+      <table class="tabel table rounded-pil">
+        <thead>
+          <tr class="table-top">
+            <th class="top-text-center">No</th>
+            <th class="top-text-center">Kategori</th>
+            <th class="top-text-center">Nama</th>
+            <th class="top-text-center">Kelas</th>
+            <th class="top-text-center">Tanggal</th>
+            <th class="top-text-center">Waktu</th>
+            <th class="top-text-center">Keperluan</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr v-for="(visitor, i) in visitors" :key="i">
+
+
+          <td class="text-center">{{ i+1 }}</td>
+
+
+          <td class="text-center">{{visitor.keanggotaan.nama}}</td>
+
+
+          <td class="text-center">{{visitor.nama}}</td>
+
+
+          <td class="text-center">{{ visitor.kelas }} {{ visitor.jurusan }} {{visitor.tingkat}} </td>
+
+
+          <td class="text-center">{{visitor.tanggal}}</td>
+
+
+          <td class="text-center">{{visitor.waktu.split(".")[0]}}</td>
+
+
+          <td class="text-center">{{visitor.keperluan?.nama || visitor.keperluan_lainnya}}</td>
+
+          
         </tr>
-      </thead>
-      <tbody>
-
-        <tr v-for="(visitor, i) in visitors" :key="i">
-
-
-        <td class="text-center">{{ i+1 }}</td>
-
-
-        <td class="text-center">{{visitor.keanggotaan.nama}}</td>
-
-
-        <td class="text-center">{{visitor.nama}}</td>
-
-
-        <td class="text-center">{{ visitor.kelas }} {{ visitor.jurusan }} {{visitor.tingkat}} </td>
-
-
-        <td class="text-center">{{visitor.tanggal}}</td>
-
-
-        <td class="text-center">{{visitor.waktu.split(".")[0]}}</td>
-
-
-        <td class="text-center">{{visitor.keperluan?.nama || visitor.keperluan_lainnya}}</td>
-
-
-      </tr>
       </tbody>
     </table>
   </div>
@@ -197,6 +197,18 @@ td {
   text-align: center;
   font-size: 24px;
   opacity: 1;
+}
+
+.card {
+  padding: 0;
+  font-size: 20px;
+  height: 30px;
+  width: 100px;
+  opacity: .6;
+}
+
+.jumlah-pengunjung{
+  font-size: 10px;
 }
 
   .tabel {
