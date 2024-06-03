@@ -167,6 +167,11 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 430px){
+
+  .wrapper{
+    padding-top: 70px;
+  }
+  
   .book {
   display: grid;
   grid-template-columns: auto auto ;
