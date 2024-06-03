@@ -135,7 +135,7 @@ onMounted(() => {
 .book {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
-
+  padding-left: 5%;
 }
 
 @media screen and (max-width: 768px){
