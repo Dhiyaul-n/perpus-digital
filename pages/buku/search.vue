@@ -2,9 +2,13 @@
   <div class="wrapper">
     <div class="background"></div>
       <div class="search input-group input-group-sm p-0">
-        <form @submit.prevent="getBooks">
+        <form class="formulir" @submit.prevent="getBooks">
           <input v-model="keyword" type="search" class="search form-control" aria-label="Small" placeholder=" search here...">
         </form>
+        <select v-model="category" id="category2" class="" @change="getBooks">
+        <option :value="null" disabled>Kategori</option>
+        <option v-for="(kategori, i) in kategories" :key="i" :value="kategori.id">{{ kategori.nama }}</option>
+        </select>
       </div>
     <div class="book mt-5">
       <div v-for="(book, i) in books" :key="i" class="col-lg-2">
@@ -17,7 +21,7 @@
     </div>
     <div class="btn">
       <NuxtLink class="kembali btn rounded-1" to="/history">kembali</NuxtLink>
-      <select v-model="category" class="kategori form form-select form-control" @change="getBooks">
+      <select v-model="category" id="category1" class="kategori form form-select form-control" @change="getBooks">
         <option :value="null" disabled>Kategori</option>
         <option v-for="(kategori, i) in kategories" :key="i" :value="kategori.id">{{ kategori.nama }}</option>
         </select>
@@ -78,8 +82,6 @@ onMounted(() => {
 <style scoped>
 
 
-
-
 .background {
   background-image: url('@/assets/img/search-bg.png');
   position: fixed;
@@ -109,6 +111,9 @@ onMounted(() => {
   margin-bottom: 15%;
 }
 
+.formulir{
+  width: 100%;
+}
 
 .kategori{
   background-color: #ffffff;
@@ -124,9 +129,7 @@ onMounted(() => {
   }
 
 
-  form{
-  width: 100%;
-  }
+
 
 ::placeholder {
   color: black;
@@ -174,6 +177,14 @@ onMounted(() => {
   padding-left: 5%;
 }
 
+#category2{
+  display: none;
+  position: relative;
+  left: 10%;
+  width: 20%;
+  border-radius: 7px;
+}
+
 @media screen and (max-width: 768px){
   
   .search{
@@ -198,6 +209,10 @@ onMounted(() => {
     position: fixed;
     left: 30px;
     bottom: 5%;
+  }
+
+  #category1{
+    display: none;
   }
 
 }
@@ -227,7 +242,12 @@ onMounted(() => {
   width: 100%;
   position: sticky;
   margin-top: 20%;
-  margin-bottom: 15%;
+  margin-top: 15%;
+}
+
+#category2{
+  display: flex;
+  position: relative;
 }
 
 }
