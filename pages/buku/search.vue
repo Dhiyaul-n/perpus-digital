@@ -180,7 +180,7 @@ onMounted(() => {
 #category2{
   display: none;
   position: relative;
-  left: 10%;
+  left: 60%;
   width: 20%;
   border-radius: 7px;
 }
@@ -219,6 +219,21 @@ onMounted(() => {
 
 @media screen and (max-width: 430px){
 
+  .background{
+    background-image: url('@/assets/img/bg-search-mobile.png');
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
   .wrapper{
     padding-top: 70px;
   }
@@ -235,17 +250,17 @@ onMounted(() => {
   height: 20px;
   font-weight: 500;
   color: black;
-  opacity: 0.9;
+  opacity: 1;
   top: 0;
   bottom: 0;
   border-radius: 4px;
   width: 100%;
-  position: sticky;
-  margin-top: 20%;
-  margin-top: 15%;
+  margin-top: 2%;
+  position: relative;
 }
 
 #category2{
+  margin-top: 25px;
   display: flex;
   position: relative;
 }
