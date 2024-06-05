@@ -266,7 +266,9 @@ cover-form {
   padding-top: 40%;
 }
 
-
+  .background{
+    background-image: url('@/assets/img/home-mobile.png');
+  }
 
   .kirim{
     right: 0%;

@@ -52,7 +52,7 @@ onMounted(() => {
 .container-fluid {
   width: 100%;
   height: 100%;
-  padding-top: 140px;
+  padding-top: 15%;
   padding-left: 0;
   padding-right: 0;
   background-blend-mode: soft-light;
@@ -78,6 +78,7 @@ onMounted(() => {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.15);
   display: grid;
+  position: sticky;
   grid-template-columns: 25% 75%;
 }
 

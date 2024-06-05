@@ -1,10 +1,11 @@
 <template>
   <div class="wrapper">
     <div class="background"></div>
-    <div class="search input-group input-group-sm p-0"></div>
-    <form @submit.prevent="getBooks">
-      <input v-model="keyword" type="search" class="form-control" aria-label="Small" placeholder=" search here...">
-    </form>
+      <div class="search input-group input-group-sm p-0">
+        <form @submit.prevent="getBooks">
+          <input v-model="keyword" type="search" class="search form-control" aria-label="Small" placeholder=" search here...">
+        </form>
+    </div>
     <div class="book mt-5">
       <div v-for="(book, i) in books" :key="i" class="col-lg-2">
         <div class="card-body">
@@ -48,17 +49,6 @@ onMounted(() => {
 <style scoped>
 
 
-.wrapper {
-  width: 100%;
-  height: 2000px;
-  padding-top: 140px;
-  padding-left: 0;
-  padding-right: 0;
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-blend-mode: soft-light;
-  position: sticky;
-}
 
 
 .background {
@@ -74,23 +64,25 @@ onMounted(() => {
 }
 
 
-.form-control {
+.search {
   margin: 0;
   padding: 0;
-  height: 4.6%;
-  position: relative;
+  height: 30px;
   font-weight: 500;
   color: black;
-  opacity: 0.7;
-  position: fixed;
-  top: 20%;
-  border-radius: 3px;
-  margin-top: 0;
+  opacity: 0.9;
+  top: 0;
+  bottom: 0;
+  border-radius: 4px;
   width: 100%;
-  padding: 0;
-  opacity: 0.8;
+  position: sticky;
+  margin-top: 10.7%;
+  margin-bottom: 15%;
 }
 
+  form{
+  width: 100%;
+  }
 
 ::placeholder {
   color: black;
@@ -141,8 +133,8 @@ onMounted(() => {
 @media screen and (max-width: 768px){
   
   .form-control{
-    top: 10%;
-    height: 3%;
+    margin-top: 16.5%;
+    margin-bottom: 17%;
   }
 
   .book {
@@ -178,6 +170,27 @@ onMounted(() => {
   padding-left: 8%;
   }
 
+  .search {
+  margin: 0;
+  padding: 0;
+  height: 20px;
+  font-weight: 500;
+  color: black;
+  opacity: 0.9;
+  top: 0;
+  bottom: 0;
+  border-radius: 4px;
+  width: 100%;
+  position: sticky;
+  margin-top: 20%;
+  margin-bottom: 15%;
+}
+
+  form{
+  width: 100%;
+  }
+
+  
 }
 
 </style>
