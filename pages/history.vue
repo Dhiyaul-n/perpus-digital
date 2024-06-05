@@ -125,7 +125,7 @@ onMounted (() => {
   opacity: .6;
 }
 
-.table-top{
+.top-text-center{
   background-color: #4d4d4dcf;
   color: rgb(255, 255, 255);
   font-weight: lighter;

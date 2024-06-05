@@ -196,8 +196,8 @@ cover-form {
 
 
 .card {
-  background-color: rgba(0, 0, 0, 0.25);
-  box-shadow: 1px 1px 10px #ffddb9;
+  background-color: rgba(0, 0, 0, 0.45);
+  box-shadow: 1px 1px 5px #000000;
   width: 95%;
   text-align: center;
   margin-left: 2.5%;

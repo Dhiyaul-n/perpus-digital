@@ -2,7 +2,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <div class="header row p-0 mb-0 text-white tp fixed-top">
       <div class="div-logo">
-        <img class="logo-smk" src="@/assets/img/LOGO-SMK4.png" alt="LOGO SMKN 4">
+        <img class="logo-smk" src="@/assets/img/LOGO-SMK4.webp" alt="LOGO SMKN 4">
     </div>
 
     <div class="div-judul">
@@ -21,10 +21,9 @@
 
 
 .header{
-  box-shadow: 1px 1px 10px #ffddb9;
-  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 5px #000000;
+  background-color: rgba(0, 0, 0, 0.6);
   transition: 1s;
-  height: 20%;
   display: grid;
   grid-template-columns: 10% 90%;
 }
@@ -42,8 +41,7 @@
 }
 
 .logo-smk {
-  width: 100%;
-  height: 85%;
+  width: 130px;
   padding-left: 10px;
 }
 
@@ -54,7 +52,7 @@
 
 .tittle {
   font-family: "Michroma";
-  font-size: 70px;
+  font-size: 65px;
   margin: 0;
   lighting-color: white;
   color: #fffbfb7e;
@@ -88,14 +86,17 @@
   .header {
   display: grid;
   grid-template-columns: 18% 82%;
-  height: 10%;
   }
 
   .div-logo{
-    width: 100%;
-    height: 75%;
-    padding: 0;
-  }
+  width: 100%;
+  height: 100%;
+}
+
+.logo-smk {
+  width: 100%;
+  padding-left: 10px;
+}
 
   .div-judul{
     height: 40%;
@@ -106,26 +107,24 @@
     font-size: 40px;
     padding: 0;
   }
-
-  .logo-smk{
-    width: 90%;
-    height: 99%;
-  }
 }
 
 @media screen and (max-width: 430px){
   .header {
   display: grid;
   grid-template-columns: 20% 80%;
-  height: 10%;
   padding: 0;
   }
 
   .div-logo{
-    width: 100%;
-    height: 75%;
-    padding: 0;
-  }
+  width: 100%;
+  height: 100%;
+}
+
+.logo-smk {
+  width: 100%;
+  padding-left: 10px;
+}
 
   .div-judul{
     height: 40%;
@@ -133,7 +132,7 @@
   }
 
   .tittle{
-    font-size: 28px;
+    font-size: 20px;
     padding: 0;
   }
 
@@ -141,10 +140,6 @@
   font-size: 10px;
 }
 
-  .logo-smk{
-    width: 100%;
-    height: 120%;
-  }
 }
 
 </style>
