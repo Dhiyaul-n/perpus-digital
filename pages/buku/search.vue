@@ -22,7 +22,7 @@
     <div class="btn">
       <NuxtLink class="kembali btn rounded-1" to="/history">kembali</NuxtLink>
       <select v-model="category" id="category1" class="kategori form form-select form-control" @change="getBooks">
-        <option :value="null" disabled>Kategori</option>
+        <option :value="null">Kategori</option>
         <option v-for="(kategori, i) in kategories" :key="i" :value="kategori.id">{{ kategori.nama }}</option>
         </select>
     </div>
@@ -39,7 +39,7 @@ const books = ref ([])
 
 const getBooks = async () => {
   let query = supabase.from('buku').select(`*,kategori(*)`)
-  if (keyword.value) query = query.ilike('judul', keyword.value)
+  if (keyword.value) query = query.ilike('judul', `%${keyword.value}%`)
   if (category.value) query = query.eq('kategori', category.value)
   const { data, error } = await query
   if (error) throw error
