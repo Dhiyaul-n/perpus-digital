@@ -5,7 +5,7 @@
         <form @submit.prevent="getBooks">
           <input v-model="keyword" type="search" class="search form-control" aria-label="Small" placeholder=" search here...">
         </form>
-    </div>
+      </div>
     <div class="book mt-5">
       <div v-for="(book, i) in books" :key="i" class="col-lg-2">
         <div class="card-body">
@@ -17,30 +17,59 @@
     </div>
     <div class="btn">
       <NuxtLink class="kembali btn rounded-1" to="/history">kembali</NuxtLink>
+      <select v-model="category" class="kategori form form-select form-control" @change="getBooks">
+        <option :value="null" disabled>Kategori</option>
+        <option v-for="(kategori, i) in kategories" :key="i" :value="kategori.id">{{ kategori.nama }}</option>
+        </select>
     </div>
   </div>
 </template>
 
 <script setup>
 const supabase = useSupabaseClient()
-
+const kategories = ref([])
 const keyword = ref('')
-const books = ref([])
+const category = ref(null)
+const books = ref ([])
+
 
 const getBooks = async () => {
-  const { data, error } = await supabase.from('buku').select(`*,kategori(*)`)
-  .ilike('judul', `%${keyword.value}%`)
-  if(data) books.value = data
-  data.forEach(book => {
-    const {data} = supabase.storage.from('cover').getPublicUrl(book.cover)
-    if (data) {
-      book.cover = data.publicUrl
-    }
-  })
+  let query = supabase.from('buku').select(`*,kategori(*)`)
+  if (keyword.value) query = query.ilike('judul', keyword.value)
+  if (category.value) query = query.eq('kategori', category.value)
+  const { data, error } = await query
+  if (error) throw error
+  if(data) {
+    books.value = data
+    data.forEach(book => {
+      const {data} = supabase.storage.from('cover').getPublicUrl(book.cover)
+      if (data) {
+        book.cover = data.publicUrl
+      }
+    })
+  } 
 }
+
+const getKategori = async () => {
+  const { data, error} = await supabase
+  .from('kategori_buku')
+  .select('*')
+  if (data) kategories.value = data
+}
+
+const bookFiltered = computed (() => {
+  return books.value.filter((b) => {
+    return (
+      b.judul?.toLowerCase().includes(keyword.value?.toLowerCase()) ||
+      b.kategori?.nama.toLowerCase().includes(keyword.value?.toLowerCase())
+    ) 
+  })
+})
+
 
 onMounted(() => {
   getBooks()
+  getKategori()
 })
 
 </script>
@@ -80,6 +109,21 @@ onMounted(() => {
   margin-bottom: 15%;
 }
 
+
+.kategori{
+  background-color: #ffffff;
+  width: 120px;
+  height: 30px;
+  padding-top: 0px;
+  text-align: center;
+  font-weight: 500;
+  color: black;
+  position: fixed;
+  right: 5%;
+  bottom: 3%;
+  }
+
+
   form{
   width: 100%;
   }
@@ -91,7 +135,7 @@ onMounted(() => {
 
 
 .kembali {
-  background-color: #D9D9D9;
+  background-color: #ffffff;
   width: 120px;
   height: 27px;
   padding-top: 0px;
@@ -99,7 +143,7 @@ onMounted(() => {
   font-weight: 500;
   color: black;
   position: fixed;
-  left: 30px;
+  left: 5%;
   bottom: 3%;
 }
 
@@ -132,7 +176,7 @@ onMounted(() => {
 
 @media screen and (max-width: 768px){
   
-  .form-control{
+  .search{
     margin-top: 16.5%;
     margin-bottom: 17%;
   }
@@ -186,11 +230,6 @@ onMounted(() => {
   margin-bottom: 15%;
 }
 
-  form{
-  width: 100%;
-  }
-
-  
 }
 
 </style>
