@@ -1,9 +1,17 @@
 <template>
   <div class="container-fluid ps-5">
     <div class="background"></div>
-    <div class="card bg-pengunjung rounded-3">
-        <p class="jumlah-pengunjung">{{ visitors.length }} PENGUNJUNG</p>
-    </div>
+    <div class="grid-group">
+      <div class="bg-pengunjung">
+        <p class="jumlah-pengunjung">Pengunjung: {{ visitors.length }}</p>
+      </div>
+      <div class="search responsive p-0">
+        <form class="formulir" @submit.prevent="getBooks">
+          <input v-model="keyword" type="search" class="search form-control" placeholder="🔎cari pengunjung.." @input="getPengunjung">
+        </form>
+        </div>
+      </div>
+
     <div class="table-responsive">
       <table class="tabel table rounded-pil">
         <thead>
@@ -61,11 +69,15 @@
 <script setup>
 
 const supabase = useSupabaseClient()
+const keyword = ref ('')
 const visitors = ref ([])
 
+
 const getPengunjung = async() => {
-  const {data, error} = await supabase.from('pengunjung').select().order('tanggal', { ascending: false }).order('waktu', {ascending: false})
-  .select(`*, keanggotaan(*), keperluan(*)`)
+  const {data, error} = await supabase.from('pengunjung')
+  .select().order('tanggal', { ascending: false }).order('waktu', {ascending: false}).select(`*, keanggotaan(*), keperluan(*)`)
+  .ilike('nama', `%${keyword.value}%`)
+  .order('id', { ascending: false })
   if(data) visitors.value = data
 }
 
@@ -100,16 +112,22 @@ onMounted (() => {
   background-position: center;
 }
 
-.bg-pengunjung{
-  margin-top: 10px;
-  margin-bottom: 10px;
+.grid-group{
+  width: 94.7%;
+  margin-top: 20px;
+  height: 60px;
+  display: grid;
+  grid-template-columns: 20% 80%;
 }
 
+
 .jumlah-pengunjung{
+  background-color: rgba(128, 128, 128, 0.65);
+  border-radius: 5px;
   position: relative;
   font-size: 40px;
   font-weight: 500;
-  top: 25%;
+  width: 100%;
   color: black;
   font-family: "Alata";
   opacity: 1;  
@@ -118,12 +136,10 @@ onMounted (() => {
   opacity: 1;
 }
 
-.card {
-  padding: 0;
-  height: 70px;
-  width: 200px;
-  opacity: .6;
+.search  {
+  position: relative;
 }
+
 
 .top-text-center{
   background-color: #4d4d4dcf;
@@ -211,35 +227,37 @@ td {
   background-position: center;
 }
 
+.grid-group{
+  width: 100%;
+  margin-left: 0%;
+  position: relative;
+  right: 7%;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  display: list-item;
+}
+
+
+
+.bg-pengunjung{
+  height: 100%;
+}
+
 .jumlah-pengunjung{
   position: relative;
-  right: 0px;
-  font-size: 20px;
   font-weight: 500;
-  top: 25%;
   color: black;
   font-family: "Alata";
   opacity: 1;  
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   opacity: 1;
 }
 
-
-.card {
-  position: relative;
-  right: 7%;
-  padding-left: 0;
-  padding-right: 20px;
-  padding: 0;
-  font-size: 20px;
-  height: 30px;
-  width: 100px;
-  opacity: .6;
-}
-
-.jumlah-pengunjung{
-  font-size: 10px;
+.search{
+  padding: 5;
 }
 
 .tabel{

@@ -7,19 +7,19 @@
           <form @submit.prevent="kirimData" class=" form card rounded-4">
             <h2 class="judul-form text-white display-3">Form Pengunjung</h2>
             <div class="mb-1 p-5 pt-0 py-0">
-              <input v-model="form.nama" type="text" class="form-control rounded-2" placeholder="Nama">
+              <input v-model="form.nama" type="text" class="form-control rounded-3" placeholder="Nama">
             </div>
             <div class="mt-2 mb-1 p-5 pt-0 py-0">
-              <select @change="cekKeanggotaan" v-model="form.keanggotaan" class="form-control rounded-2"
+              <select @change="cekKeanggotaan" v-model="form.keanggotaan" class="form-control rounded-3"
                 aria-placeholder="KATEGORI">
                 <option value="" disabled>KATEGORI</option>
                 <option v-for="(member, i) in members" :key="i" :value="member.id">{{ member.nama }}</option>
               </select>
               <div v-if="form.keanggotaan == '2'" class="mb-0">
-                <input type="text" value="KELAS" readonly class="form-control rounded-2">
+                <input type="text" value="KELAS" readonly class="form-control rounded-3">
                 <div class="option">
                   <div class="col-md p-0">
-                    <select v-model="form.kelas" class="form-control rounded-2 ">
+                    <select v-model="form.kelas" class="form-control rounded-3 ">
                       <option value="" disabled>TINGKAT</option>
                       <option class="opsi" value="X">X</option>
                       <option class="opsi" value="XI">XI</option>
@@ -27,7 +27,7 @@
                     </select>
                   </div>
                   <div class="col-md p-0">
-                    <select v-model="form.jurusan" class="form-control rounded-2 ">
+                    <select v-model="form.jurusan" class="form-control rounded-3 ">
                       <option value="" disabled>JURUSAN</option>
                       <option class="opsi" value="PPLG">PPLG</option>
                       <option class="opsi" value="TJKT">TJKT</option>
@@ -37,12 +37,12 @@
                     </select>
                   </div>
                   <div class="col-md p-0">
-                    <select v-model="form.tingkat" class="form-control rounded-2 ">
+                    <select v-model="form.tingkat" :disabled="!form.jurusan || form.jurusan=='TOI'" class="form-control rounded-3 ">
                       <option value="" disabled>ROMBEL</option>
                       <option class="opsi" value="1">1</option>
                       <option class="opsi" value="2">2</option>
-                      <option class="opsi" value="3">3</option>
-                      <option class="opsi" value="4">4</option>
+                      <option v-if="!(form.jurusan=='DKV')" class="opsi" value="3">3</option>
+                      <option v-if="!(form.jurusan=='DKV')" class="opsi" value="4">4</option>
                     </select>
                   </div>
                 </div>
@@ -55,9 +55,9 @@
                   <option>Lainnya</option>
                 </select>
               </div>
-              <div v-if="keperluan == 'Lainnya'" class="form-group-py1 text-dark" aria-placeholder="KEPERLUAN">
+              <div v-if="keperluan == 'Lainnya'" class="form-group-py1 text-dark rounded-3" aria-placeholder="KEPERLUAN">
                 <div class="dll">
-                  <textarea v-model="form.keperluan_lainnya" class="form-control" cols="30" rows="3"
+                  <textarea v-model="form.keperluan_lainnya" class="form-control rounded-3" cols="30" rows="3"
                     placeholder="ketik di sini.."></textarea>
                 </div>
               </div>

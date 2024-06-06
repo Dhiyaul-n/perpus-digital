@@ -6,7 +6,7 @@
           <input v-model="keyword" type="search" class="search form-control" aria-label="Small" placeholder=" search here...">
         </form>
         <select v-model="category" id="category2" class="" @change="getBooks">
-        <option :value="null" disabled>Kategori</option>
+        <option :value="null">Kategori</option>
         <option v-for="(kategori, i) in kategories" :key="i" :value="kategori.id">{{ kategori.nama }}</option>
         </select>
       </div>
@@ -61,14 +61,14 @@ const getKategori = async () => {
   if (data) kategories.value = data
 }
 
-const bookFiltered = computed (() => {
-  return books.value.filter((b) => {
-    return (
-      b.judul?.toLowerCase().includes(keyword.value?.toLowerCase()) ||
-      b.kategori?.nama.toLowerCase().includes(keyword.value?.toLowerCase())
-    ) 
-  })
-})
+// const bookFiltered = computed (() => {
+//   return books.value.filter((b) => {
+//     return (
+//       b.judul?.toLowerCase().includes(keyword.value?.toLowerCase()) ||
+//       b.kategori?.nama.toLowerCase().includes(keyword.value?.toLowerCase())
+//     ) 
+//   })
+// })
 
 
 onMounted(() => {
