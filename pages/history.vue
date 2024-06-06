@@ -12,48 +12,52 @@
         </div>
       </div>
 
-    <div class="table-responsive">
-      <table class="tabel table rounded-pil">
+    <div class=" table-responsive head">
+      <table class="tabel table table-head rounded-pil">
         <thead>
           <tr class="table-top">
-            <th class="top-text-center">No</th>
-            <th class="top-text-center">Kategori</th>
-            <th class="top-text-center">Nama</th>
-            <th class="top-text-center">Kelas</th>
-            <th class="top-text-center">Tanggal</th>
-            <th class="top-text-center">Waktu</th>
-            <th class="top-text-center">Keperluan</th>
+            <th class="top-text-center" style="width: 3.7%;">No</th>
+            <th class="top-text-center" style="width: 7.78%;">Kategori</th>
+            <th class="top-text-center" style="width: 23%;">Nama</th>
+            <th class="top-text-center" style="width: 13.94%;">Kelas</th>
+            <th class="top-text-center" style="width: 14.5%;">Tanggal</th>
+            <th class="top-text-center" style="width: 13.7%;">Waktu</th>
+            <th class="top-text-center" style="width: 18.45%;">Keperluan</th>
           </tr>
         </thead>
-        <tbody>
+        </table>
+        </div>
+        <div class="table-responsive body">
+          <table class=" table-body">
+          <tbody>
 
-          <tr v-for="(visitor, i) in visitors" :key="i">
-
-
-          <td class="text-center">{{ i+1 }}</td>
-
-
-          <td class="text-center">{{visitor.keanggotaan.nama}}</td>
+            <tr v-for="(visitor, i) in visitors" :key="i">
 
 
-          <td class="text-center">{{visitor.nama}}</td>
+            <td class="text-center" style="width: 4%;">{{ i+1 }}</td>
 
 
-          <td class="text-center">{{ visitor.kelas }} {{ visitor.jurusan }} {{visitor.tingkat}} </td>
+            <td class="text-center" style="width: 8%;">{{visitor.keanggotaan.nama}}</td>
 
 
-          <td class="text-center">{{visitor.tanggal}}</td>
+            <td class="text-center" style="width: 24.4%;">{{visitor.nama}}</td>
 
 
-          <td class="text-center">{{visitor.waktu.split(".")[0]}}</td>
+            <td class="text-center" style="width: 14.5%;">{{ visitor.kelas }} {{ visitor.jurusan }} {{visitor.tingkat}} </td>
 
 
-          <td class="text-center">{{visitor.keperluan?.nama || visitor.keperluan_lainnya}}</td>
+            <td class="text-center" style="width: 15.3%">{{visitor.tanggal}}</td>
 
-          
-        </tr>
-      </tbody>
-    </table>
+
+            <td class="text-center" style="width: 10.7%;">{{visitor.waktu.split(".")[0]}}</td>
+
+
+            <td class="text-center" style="width: 21.38%;">{{visitor.keperluan?.nama || visitor.keperluan_lainnya}}</td>
+
+            
+          </tr>
+        </tbody>
+      </table>
   </div>
     <div class="button">
       <div class="back">      
@@ -140,6 +144,9 @@ onMounted (() => {
   position: relative;
 }
 
+.table-responsive{
+  width: 100%;
+}
 
 .top-text-center{
   background-color: #4d4d4dcf;
@@ -147,10 +154,24 @@ onMounted (() => {
   font-weight: lighter;
 }
 
-.table-responsive{
+.tabel-atas{
+  padding-bottom: 5%;
+  width: 90%;
+}
+
+.table-head{
   padding-bottom: 5%;
   width: 95%;
+  margin: 0;
+  padding: 0;
 }
+
+.table-body{
+  padding-bottom: 5%;
+  max-height: 100px;
+  width: 95%;
+}
+
 
 .top-text-center{
   font-weight: 300;
@@ -208,9 +229,6 @@ td {
 }
 
 @media screen and (max-width: 768px) {
-  .tabel {
-  width: 95%;
-}
 }
 
 @media screen and (max-width: 430px){
@@ -268,13 +286,21 @@ td {
 .table-responsive{
   font-size: 10px;
   position: relative;
-  right: 20px;
   padding-bottom: 50px;
   margin: 0;
-  margin-right: 50px;
+  padding: 0;
   width: 100%;
+  right: 7%;
 }
 
+
+
+.table-body{
+  padding-bottom: 5%;
+  width: 100%;
+  overflow-x:hidden;
+  position: relative;
+}
 
 }
 
