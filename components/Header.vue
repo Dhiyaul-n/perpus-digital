@@ -21,7 +21,7 @@
 
 
 .header{
-  box-shadow: 1px 1px 5px #000000;
+  box-shadow: 1px 1px 10px #ffffff;
   background-color: rgba(0, 0, 0, 0.6);
   transition: 1s;
   display: grid;
@@ -30,6 +30,7 @@
 
 
 .header:hover{
+  box-shadow: 1px 1px 5px #000000;
   background-color: #f8d30400;
   transition: 1s;
 }
@@ -111,6 +112,8 @@
 
 @media screen and (max-width: 430px){
   .header {
+  box-shadow: 1px 1px 5px #000000;
+  background-color: #f8d30400;
   display: grid;
   grid-template-columns: 20% 80%;
   padding: 0;
@@ -131,11 +134,14 @@
     padding: 0;
   }
 
-  .tittle{
-    font-size: 20px;
-    padding: 0;
+  .tittle {
+  color: #249cff;
+  font-size: 20px;
+  text-shadow: 0 -1.1em #249cff77;
+  transition: .7s;
+  opacity: 1;
   }
-
+  
 .alamat{
   font-size: 10px;
 }

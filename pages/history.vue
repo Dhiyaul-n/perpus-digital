@@ -1,72 +1,61 @@
 <template>
   <div class="container-fluid ps-5">
-    <div class="background"></div>
-    <div class="grid-group">
-      <div class="bg-pengunjung">
-        <p class="jumlah-pengunjung">Pengunjung: {{ visitors.length }}</p>
-      </div>
-      <div class="search responsive p-0">
-        <form class="formulir" @submit.prevent="getBooks">
-          <input v-model="keyword" type="search" class="search form-control" placeholder="🔎cari pengunjung.." @input="getPengunjung">
-        </form>
+    <div class="background">  
+    </div>
+      <div class="grid-group">
+        <div class="bg-pengunjung">
+          <p class="jumlah-pengunjung">Pengunjung: {{ visitors.length }}</p>
         </div>
-      </div>
 
-    <div class=" table-responsive head">
+        <div class="search responsive p-0">
+          <form class="formulir" @submit.prevent="getBooks">
+            <input v-model="keyword" type="search" class="search form-control" placeholder="🔎cari pengunjung.." @input="getPengunjung">
+          </form>
+          </div>
+        </div>
+
+    <div class=" table-responsive utama head">
       <table class="tabel table table-head rounded-pil">
         <thead>
           <tr class="table-top">
-            <th class="top-text-center" style="width: 3.7%;">No</th>
-            <th class="top-text-center" style="width: 7.78%;">Kategori</th>
-            <th class="top-text-center" style="width: 23%;">Nama</th>
-            <th class="top-text-center" style="width: 13.94%;">Kelas</th>
-            <th class="top-text-center" style="width: 14.5%;">Tanggal</th>
-            <th class="top-text-center" style="width: 13.7%;">Waktu</th>
-            <th class="top-text-center" style="width: 18.45%;">Keperluan</th>
+            <th class="top-text-center no-head">No</th>
+            <th class="top-text-center kategori-head">Kategori</th>
+            <th class="top-text-center nama-head" >Nama</th>
+            <th class="top-text-center kelas-head">Kelas</th>
+            <th class="top-text-center">Tanggal</th>
+            <th class="top-text-center">Waktu</th>
+            <th class="top-text-center">Keperluan</th>
           </tr>
         </thead>
         </table>
         </div>
+
         <div class="table-responsive body">
           <table class=" table-body">
-          <tbody>
+            <tbody>
 
-            <tr v-for="(visitor, i) in visitors" :key="i">
+              <tr v-for="(visitor, i) in visitors" :key="i">
+                <td class="text-center no-body">{{ i+1 }}</td>
+                <td class="text-center kategori-body">{{visitor.keanggotaan.nama}}</td>
+                <td class="text-center nama-body">{{visitor.nama}}</td>
+                <td class="text-center kelas-body">{{ visitor.kelas }} {{ visitor.jurusan }} {{visitor.tingkat}} </td>
+                <td class="text-center tanggal-body">{{visitor.tanggal}}</td>
+                <td class="text-center waktu-body">{{visitor.waktu.split(".")[0]}}</td>
+                <td class="text-center keperluan-body">{{visitor.keperluan?.nama || visitor.keperluan_lainnya}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
+        <div class="button">
+          <div class="back">      
+            <NuxtLink class="kembali btn rounded-1" to="/">kembali</NuxtLink>
+          </div>
 
-            <td class="text-center" style="width: 4%;">{{ i+1 }}</td>
-
-
-            <td class="text-center" style="width: 8%;">{{visitor.keanggotaan.nama}}</td>
-
-
-            <td class="text-center" style="width: 24.4%;">{{visitor.nama}}</td>
-
-
-            <td class="text-center" style="width: 14.5%;">{{ visitor.kelas }} {{ visitor.jurusan }} {{visitor.tingkat}} </td>
-
-
-            <td class="text-center" style="width: 15.3%">{{visitor.tanggal}}</td>
-
-
-            <td class="text-center" style="width: 10.7%;">{{visitor.waktu.split(".")[0]}}</td>
-
-
-            <td class="text-center" style="width: 21.38%;">{{visitor.keperluan?.nama || visitor.keperluan_lainnya}}</td>
-
-            
-          </tr>
-        </tbody>
-      </table>
-  </div>
-    <div class="button">
-      <div class="back">      
-        <NuxtLink class="kembali btn rounded-1" to="/">kembali</NuxtLink>
-      </div>
-      <div class="cari">
-        <NuxtLink class="caribuku btn rounded-1" to="/buku/search">Cari buku</NuxtLink>
-      </div>
-    </div>
+          <div class="cari">
+            <NuxtLink class="caribuku btn rounded-1" to="/buku/search">Cari buku</NuxtLink>
+          </div>
+        </div>
   </div>
 </template>
 
@@ -144,9 +133,7 @@ onMounted (() => {
   position: relative;
 }
 
-.table-responsive{
-  width: 100%;
-}
+
 
 .top-text-center{
   background-color: #4d4d4dcf;
@@ -166,10 +153,76 @@ onMounted (() => {
   padding: 0;
 }
 
+.table-responsive body{
+  max-height: 600px;
+  width: 90%;
+}
+
+
+
 .table-body{
   padding-bottom: 5%;
-  max-height: 100px;
+  margin-bottom: 10%;
+  padding-bottom: 5%;
   width: 95%;
+  margin: 0;
+  padding: 0;
+}
+
+.no-head{
+  width: 3%;
+}
+
+.no-body{
+  width: 3%;
+}
+
+.kategori-head{
+  width: 10%;
+}
+
+.kategori-body{
+  width: 10%;
+}
+
+.nama_head{
+  width: 23%;
+}
+
+.nama_body{
+  width: 23%;
+}
+
+.kelas-head{
+  width: 14%;
+}
+
+.kelas-body{
+  width: 14%;
+}
+
+.tanggal-head{
+  width: 14%;
+}
+
+.tanggal-body{
+  width: 14%;
+}
+
+.waktu-head{
+  width: 10%;
+}
+
+.waktu-body{
+  width: 10%;
+}
+
+.keperluan-head{
+  width: 20%;
+}
+
+.keperluan-body{
+  width: 23%;
 }
 
 
@@ -228,8 +281,6 @@ td {
   font-family: "Alata";
 }
 
-@media screen and (max-width: 768px) {
-}
 
 @media screen and (max-width: 430px){
 
@@ -284,6 +335,7 @@ td {
 }
 
 .table-responsive{
+  box-shadow: 5px 5px 6px black; 
   font-size: 10px;
   position: relative;
   padding-bottom: 50px;
@@ -291,6 +343,7 @@ td {
   padding: 0;
   width: 100%;
   right: 7%;
+  max-height: 440px;
 }
 
 
@@ -302,6 +355,38 @@ td {
   position: relative;
 }
 
+.no-head{
+  width: 10%;
 }
 
+.no-body{
+  width: 10%;
+}
+
+.kategori-body{
+  width: 10%;
+}
+
+.nama-body{
+  width: 20%;
+}
+
+.kelas-body{
+  width: 20%;
+}
+
+.tanggal-body{
+  width: 20%;
+}
+
+.waktu-body{
+  width: 20%;
+}
+
+.keperluan-body{
+  width: 20%;
+}
+
+
+}
 </style>
