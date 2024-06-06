@@ -141,10 +141,7 @@ onMounted (() => {
   font-weight: lighter;
 }
 
-.tabel-atas{
-  padding-bottom: 5%;
-  width: 90%;
-}
+
 
 .table-head{
   padding-bottom: 5%;
@@ -154,75 +151,64 @@ onMounted (() => {
 }
 
 .table-responsive body{
-  max-height: 600px;
-  width: 90%;
+  max-height: 700px;
 }
-
-
 
 .table-body{
   padding-bottom: 5%;
   margin-bottom: 10%;
-  padding-bottom: 5%;
-  width: 95%;
   margin: 0;
   padding: 0;
+  width: 95%;
 }
 
 .no-head{
-  width: 3%;
+  width: 5%;
 }
-
 .no-body{
-  width: 3%;
+  width: 5%;
 }
 
 .kategori-head{
-  width: 10%;
+  width: 15%;
 }
-
 .kategori-body{
-  width: 10%;
+  width: 15%;
 }
 
-.nama_head{
-  width: 23%;
+.nama-head{
+  width: 25%;
 }
-
-.nama_body{
-  width: 23%;
+.nama-body{
+  width: 25%;
 }
 
 .kelas-head{
-  width: 14%;
+  width: 10%;
 }
-
 .kelas-body{
-  width: 14%;
+  width: 10%;
 }
 
 .tanggal-head{
-  width: 14%;
+  width: 15%;
 }
-
 .tanggal-body{
-  width: 14%;
+  width: 15%;
 }
 
 .waktu-head{
-  width: 10%;
+  width: 12.5%;
 }
-
 .waktu-body{
-  width: 10%;
+  width: 12.5%;
 }
 
 .keperluan-head{
   width: 20%;
 }
-
 .keperluan-body{
-  width: 23%;
+  width: 20%;
 }
 
 
@@ -315,6 +301,8 @@ td {
 }
 
 .jumlah-pengunjung{
+  background-color: #fff;
+  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.5);
   position: relative;
   font-weight: 500;
   color: black;
@@ -329,10 +317,7 @@ td {
   padding: 5;
 }
 
-.tabel{
-  width: 100%;
-  padding-right: 50px;
-}
+
 
 .table-responsive{
   box-shadow: 5px 5px 6px black; 
@@ -341,48 +326,76 @@ td {
   padding-bottom: 50px;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 95%;
   right: 7%;
   max-height: 440px;
 }
 
+.table-top{
+  font-size: 5px;
+}
 
+.table-head{
+  height: 10%;
+  width: 100%;
+}
 
 .table-body{
   padding-bottom: 5%;
+  font-size: 5px;
   width: 100%;
   overflow-x:hidden;
   position: relative;
 }
 
 .no-head{
-  width: 10%;
+  width: 5%;
 }
 
 .no-body{
-  width: 10%;
+  width: 7.5%;
 }
 
+.kategori-head{
+  width: 10%;
+}
 .kategori-body{
-  width: 10%;
+  width: 12%;
 }
 
+.nama-head{
+  width: 20%;
+}
 .nama-body{
   width: 20%;
 }
 
+.kelas-head{
+  width: 20%;
+}
 .kelas-body{
   width: 20%;
 }
 
+.tanggal-head{
+  width: 20%;
+}
+
 .tanggal-body{
-  width: 20%;
+  width: 13%;
 }
 
+
+.waktu-head{
+  width: 20%;
+}
 .waktu-body{
-  width: 20%;
+  width: 12.3%;
 }
 
+.keperluan-head{
+  width: 20%;
+}
 .keperluan-body{
   width: 20%;
 }
