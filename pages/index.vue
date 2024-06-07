@@ -27,7 +27,7 @@
                     </select>
                   </div>
                   <div class="col-md p-0">
-                    <select v-model="form.jurusan" class="form-control rounded-3 ">
+                    <select v-model="form.jurusan" class="form-control rounded-3"  @change="selectJurusan">
                       <option value="" disabled>JURUSAN</option>
                       <option class="opsi" value="PPLG">PPLG</option>
                       <option class="opsi" value="TJKT">TJKT</option>
@@ -125,6 +125,11 @@ const getKeperluan = async () => {
   if (data) objectives.value = data
 }
 
+const selectJurusan = () => {
+  if (form.value.jurusan == 'TOI'){
+    form.value.tingkat = ''
+  }
+} 
 
 onMounted(() => {
   getKeanggotaan()
@@ -269,6 +274,21 @@ cover-form {
   .background{
     background-image: url('@/assets/img/home-mobile.png');
   }
+
+  .card {
+  background-color: rgba(255, 239, 210, 0.2);
+  box-shadow: 1px 1px 5px 5px 5px #000000;
+  width: 90%;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Andada+pro";
+  font-weight: bolder;
+}
+
+.judul-form{
+  color: #000000;
+  font-size: 20px;
+}
 
   .kirim{
     right: 0%;

@@ -297,7 +297,7 @@ td {
 
 
 .bg-pengunjung{
-  height: 100%;
+  height: 75%;
 }
 
 .jumlah-pengunjung{
@@ -326,13 +326,13 @@ td {
   padding-bottom: 50px;
   margin: 0;
   padding: 0;
-  width: 95%;
+  width: 100%;
   right: 7%;
   max-height: 440px;
 }
 
 .table-top{
-  font-size: 5px;
+  font-size: 7px;
 }
 
 .table-head{
@@ -344,8 +344,6 @@ td {
   padding-bottom: 5%;
   font-size: 5px;
   width: 100%;
-  overflow-x:hidden;
-  position: relative;
 }
 
 .no-head{
