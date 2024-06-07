@@ -5,7 +5,7 @@
       <div class="col-lg-6">
         <div class="cover-form">
           <form @submit.prevent="kirimData" class=" form card rounded-4">
-            <h2 class="judul-form text-white display-3">Form Pengunjung</h2>
+            <h2 class="judul-form display-3">Form Pengunjung</h2>
             <div class="mb-1 p-5 pt-0 py-0">
               <input v-model="form.nama" type="text" class="form-control rounded-3" placeholder="Nama">
             </div>
@@ -212,6 +212,9 @@ cover-form {
   font-weight: bolder;
 }
 
+.judul-form{
+  color: white;
+}
 
 .opsi {
   background-color: #ffffff;
@@ -278,7 +281,7 @@ cover-form {
   .card {
   background-color: rgba(255, 239, 210, 0.2);
   box-shadow: 1px 1px 5px 5px 5px #000000;
-  width: 90%;
+  width: 95%;
   font-size: 20px;
   text-align: center;
   font-family: "Andada+pro";
@@ -287,15 +290,27 @@ cover-form {
 
 .judul-form{
   color: #000000;
-  font-size: 20px;
+  font-size: 30px;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 530;
+  font-style: italic;
 }
 
-  .kirim{
-    right: 0%;
-    width: 100px;
-    height: 30px;
-    font-size: 20px;
-  }
+.form-control {
+  padding: 2px;
+  padding-left: 5px;
+  font-size: 7px;
+}
+
+.kirim{
+  right: 0%;
+  width: 60px;
+  height: 15px;
+  font-size: 8px;
+}
+
+
+
 }
 
 </style>
