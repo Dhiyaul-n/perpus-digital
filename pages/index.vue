@@ -7,19 +7,19 @@
           <form @submit.prevent="kirimData" class=" form card rounded-4">
             <h2 class="judul-form display-3">Form Pengunjung</h2>
             <div class="mb-1 p-5 pt-0 py-0">
-              <input v-model="form.nama" type="text" class="form-control rounded-3" placeholder="Nama">
+              <input v-model="form.nama" type="text" class="form-control" placeholder="Nama">
             </div>
             <div class="mt-2 mb-1 p-5 pt-0 py-0">
-              <select @change="cekKeanggotaan" v-model="form.keanggotaan" class="form-control rounded-3"
+              <select @change="cekKeanggotaan" v-model="form.keanggotaan" class="form-control"
                 aria-placeholder="KATEGORI">
                 <option value="" disabled>KATEGORI</option>
                 <option v-for="(member, i) in members" :key="i" :value="member.id">{{ member.nama }}</option>
               </select>
               <div v-if="form.keanggotaan == '2'" class="mb-0">
-                <input type="text" value="KELAS" readonly class="form-control rounded-3">
+                <input type="text" value="KELAS" readonly class="form-control">
                 <div class="option">
                   <div class="col-md p-0">
-                    <select v-model="form.kelas" class="form-control rounded-3 ">
+                    <select v-model="form.kelas" class="form-control ">
                       <option value="" disabled>TINGKAT</option>
                       <option class="opsi" value="X">X</option>
                       <option class="opsi" value="XI">XI</option>
@@ -27,7 +27,7 @@
                     </select>
                   </div>
                   <div class="col-md p-0">
-                    <select v-model="form.jurusan" class="form-control rounded-3"  @change="selectJurusan">
+                    <select v-model="form.jurusan" class="form-control" @change="selectJurusan">
                       <option value="" disabled>JURUSAN</option>
                       <option class="opsi" value="PPLG">PPLG</option>
                       <option class="opsi" value="TJKT">TJKT</option>
@@ -37,17 +37,18 @@
                     </select>
                   </div>
                   <div class="col-md p-0">
-                    <select v-model="form.tingkat" :disabled="!form.jurusan || form.jurusan=='TOI'" class="form-control rounded-3 ">
+                    <select v-model="form.tingkat" :disabled="!form.jurusan || form.jurusan == 'TOI'"
+                      class="form-control">
                       <option value="" disabled>ROMBEL</option>
                       <option class="opsi" value="1">1</option>
                       <option class="opsi" value="2">2</option>
-                      <option v-if="!(form.jurusan=='DKV')" class="opsi" value="3">3</option>
-                      <option v-if="!(form.jurusan=='DKV')" class="opsi" value="4">4</option>
+                      <option v-if="!(form.jurusan == 'DKV')" class="opsi" value="3">3</option>
+                      <option v-if="!(form.jurusan == 'DKV')" class="opsi" value="4">4</option>
                     </select>
                   </div>
                 </div>
               </div>
-              <div class="mb-1 pt-1 py-1">
+              <div class="mb-1 pt-1 py-1 ">
                 <select @change="cekKeperluan" v-model="keperluan" class="form-control" placeholder="Keperluan"
                   required>
                   <option value="" disabled>KEPERLUAN</option>
@@ -55,9 +56,9 @@
                   <option>Lainnya</option>
                 </select>
               </div>
-              <div v-if="keperluan == 'Lainnya'" class="form-group-py1 text-dark rounded-3" aria-placeholder="KEPERLUAN">
+              <div v-if="keperluan == 'Lainnya'" class="form-group-py1 text-dark" aria-placeholder="KEPERLUAN">
                 <div class="dll">
-                  <textarea v-model="form.keperluan_lainnya" class="form-control rounded-3" cols="30" rows="3"
+                  <textarea v-model="form.keperluan_lainnya" class="form-control" cols="30" rows="3"
                     placeholder="ketik di sini.."></textarea>
                 </div>
               </div>
@@ -126,10 +127,10 @@ const getKeperluan = async () => {
 }
 
 const selectJurusan = () => {
-  if (form.value.jurusan == 'TOI'){
+  if (form.value.jurusan == 'TOI') {
     form.value.tingkat = ''
   }
-} 
+}
 
 onMounted(() => {
   getKeanggotaan()
@@ -195,8 +196,9 @@ cover-form {
   width: 100%;
 }
 
-.form-control {
+.form {
   padding: 3px;
+  border-radius: 20px;
 }
 
 
@@ -212,7 +214,7 @@ cover-form {
   font-weight: bolder;
 }
 
-.judul-form{
+.judul-form {
   color: white;
 }
 
@@ -250,15 +252,15 @@ cover-form {
   right: 45%;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
 
   .wrapper {
-  width: 100%;
-  height: 100%;
-  padding-top: 20%;
-}
+    width: 100%;
+    height: 100%;
+    padding-top: 20%;
+  }
 
-  .kirim{
+  .kirim {
     right: 0%;
     width: 150px;
     height: 40px;
@@ -267,50 +269,50 @@ cover-form {
 
 }
 
-@media screen and (max-width: 430px){
+@media screen and (max-width: 430px) {
   .wrapper {
-  width: 100%;
-  height: 100%;
-  padding-top: 40%;
-}
+    width: 100%;
+    height: 100%;
+    padding-top: 40%;
+  }
 
-  .background{
+  .background {
     background-image: url('@/assets/img/home-mobile.png');
   }
 
   .card {
-  background-color: rgba(255, 239, 210, 0.2);
-  box-shadow: 1px 1px 5px 5px 5px #000000;
-  width: 95%;
-  font-size: 20px;
-  text-align: center;
-  font-family: "Andada+pro";
-  font-weight: bolder;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 1px 1px 7px 7px 7px #ffffff;
+    width: 95%;
+    font-size: 20px;
+    text-align: center;
+    font-family: "Andada+pro";
+    font-weight: bolder;
+  }
+
+  .judul-form {
+    color: #000000;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 250;
+    font-style: italic;
+  }
+
+  .form-control {
+    padding: 2px;
+    padding-bottom: 0;
+    padding-left: 5px;
+    font-size: 7px;
+  }
+
+  .kirim {
+    right: 0%;
+    width: 60px;
+    height: 15px;
+    font-size: 8px;
+  }
+
+
+
 }
-
-.judul-form{
-  color: #000000;
-  font-size: 30px;
-  font-family:'Times New Roman', Times, serif;
-  font-weight: 430;
-  font-style: italic;
-}
-
-.form-control {
-  padding: 2px;
-  padding-left: 5px;
-  font-size: 7px;
-}
-
-.kirim{
-  right: 0%;
-  width: 60px;
-  height: 15px;
-  font-size: 8px;
-}
-
-
-
-}
-
 </style>
