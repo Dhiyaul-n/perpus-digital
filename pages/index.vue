@@ -292,7 +292,7 @@ cover-form {
   color: #000000;
   font-size: 30px;
   font-family:'Times New Roman', Times, serif;
-  font-weight: 530;
+  font-weight: 430;
   font-style: italic;
 }
 
