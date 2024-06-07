@@ -280,10 +280,22 @@ cover-form {
     background-image: url('@/assets/img/home-mobile.png');
   }
 
+  .background::before {
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
   .card {
-    background-color: rgba(255, 255, 255, 0.05);
-    box-shadow: 1px 1px 7px 7px 7px #ffffff;
-    width: 95%;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 1px 1px 7px #000000;
+    width: 80%;
+    position: relative;
+    left: 7.5%;
     font-size: 20px;
     text-align: center;
     font-family: "Andada+pro";
@@ -291,8 +303,12 @@ cover-form {
   }
 
   .judul-form {
-    color: #000000;
-    font-size: 30px;
+    color: #ddc08c;
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
+    -webkit-text-stroke-width: .2px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+    font-size: 35px;
+    padding: 10%;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 250;
     font-style: italic;
@@ -306,6 +322,8 @@ cover-form {
   }
 
   .kirim {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
     right: 0%;
     width: 60px;
     height: 15px;
