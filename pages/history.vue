@@ -300,7 +300,6 @@ td {
     margin-left: 0%;
     position: relative;
     right: 7%;
-    margin-top: 20px;
     margin-bottom: 60px;
     display: grid;
     grid-template-rows: 50% 50%;
