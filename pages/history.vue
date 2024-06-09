@@ -154,7 +154,7 @@ onMounted(() => {
 }
 
 .table-responsive {
-  max-height: 350px;
+  max-height: 70%;
   width: 96%;
 }
 
