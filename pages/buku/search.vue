@@ -277,7 +277,7 @@ onMounted(() => {
   .jumlah-buku {
     font-size: 10px;
     width: 80%;
-    margin-top: 10%;
+    margin-top: 5%;
     left: 5%;
   }
 
