@@ -95,6 +95,9 @@ onMounted(() => {
   background-position: center;
 }
 
+.formulir{
+  width: 89%;
+}
 
 .search {
   margin: 0;
@@ -106,7 +109,7 @@ onMounted(() => {
   top: 0;
   bottom: 0;
   border-radius: 4px;
-  width: 94.4%;
+  width: 100%;
   left: 5%;
   margin-top: 10%;
   margin-bottom: 3%;
@@ -130,9 +133,6 @@ onMounted(() => {
   opacity: 1;
 }
 
-.formulir{
-  width: 100%;
-}
 
 .kategori{
   background-color: #ffffff;
@@ -206,7 +206,7 @@ onMounted(() => {
 
 @media screen and (max-width: 768px){
   
-  .search{
+  .search {
     margin-top: 16.5%;
     margin-bottom: 17%;
   }
@@ -253,6 +253,34 @@ onMounted(() => {
     background-position: center;
   }
 
+  .formulir{
+  width: 89%;
+}
+
+.search {
+  margin: 0;
+  padding: 0;
+  height: 17px;
+  font-weight: 500;
+  font-size: 10px;
+  color: black;
+  opacity: 0.9;
+  top: 0;
+  bottom: 0;
+  border-radius: 4px;
+  width: 95%;
+  left: 5%;
+  margin-top: 10%;
+  margin-bottom: 3%;
+}
+
+  .jumlah-buku {
+    font-size: 10px;
+    width: 80%;
+    margin-top: 10%;
+    left: 5%;
+  }
+
   .wrapper{
     padding-top: 70px;
   }
@@ -262,21 +290,6 @@ onMounted(() => {
   grid-template-columns: auto auto ;
   padding-left: 8%;
   }
-
-  .search {
-  margin: 0;
-  padding: 0;
-  height: 20px;
-  font-weight: 500;
-  color: black;
-  opacity: 1;
-  top: 0;
-  bottom: 0;
-  border-radius: 4px;
-  width: 100%;
-  margin-top: 2%;
-  position: relative;
-}
 
 #category2{
   margin-top: 25px;
