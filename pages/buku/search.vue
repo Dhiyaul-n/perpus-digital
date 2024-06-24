@@ -270,7 +270,7 @@ onMounted(() => {
   border-radius: 4px;
   width: 95%;
   left: 5%;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 3%;
 }
 
