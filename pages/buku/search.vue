@@ -269,7 +269,7 @@ onMounted(() => {
   bottom: 0;
   border-radius: 4px;
   width: 95%;
-  left: 5%;
+  left: 7%;
   margin-top: 5%;
   margin-bottom: 3%;
 }
@@ -278,7 +278,7 @@ onMounted(() => {
     font-size: 10px;
     width: 80%;
     margin-top: 5%;
-    left: 5%;
+    left: 7%;
   }
 
   .wrapper{
