@@ -154,7 +154,7 @@ onMounted(() => {
 }
 
 .table-responsive {
-  max-height: 400px;
+  max-height: 350px;
   width: 96%;
 }
 
@@ -300,6 +300,7 @@ td {
     margin-left: 0%;
     position: relative;
     right: 7%;
+    margin-top: 20px;
     margin-bottom: 60px;
     display: grid;
     grid-template-rows: 50% 50%;
@@ -332,7 +333,7 @@ td {
   
 .table-responsive {
   margin-top: 5%;
-  max-height: 350px;
+  max-height: 450px;
   width: 98%;
   right: 6%;
 }

@@ -10,8 +10,7 @@
               <input v-model="form.nama" type="text" class="form-control" placeholder="Nama">
             </div>
             <div class="mt-2 mb-1 p-5 pt-0 py-0">
-              <select @change="cekKeanggotaan" v-model="form.keanggotaan" class="form-control"
-                aria-placeholder="KATEGORI">
+              <select @change="cekKeanggotaan" v-model="form.keanggotaan" class="form-control" aria-placeholder="KATEGORI">
                 <option value="" disabled>KATEGORI</option>
                 <option v-for="(member, i) in members" :key="i" :value="member.id">{{ member.nama }}</option>
               </select>
@@ -37,8 +36,7 @@
                     </select>
                   </div>
                   <div class="col-md p-0">
-                    <select v-model="form.tingkat" :disabled="!form.jurusan || form.jurusan == 'TOI'"
-                      class="form-control">
+                    <select v-model="form.tingkat" :disabled="!form.jurusan || form.jurusan == 'TOI'" class="form-control" required>
                       <option value="" disabled>ROMBEL</option>
                       <option class="opsi" value="1">1</option>
                       <option class="opsi" value="2">2</option>
