@@ -10,6 +10,7 @@
         <option v-for="(kategori, i) in kategories" :key="i" :value="kategori.id">{{ kategori.nama }}</option>
         </select>
       </div>
+      <p class="jumlah-buku">Jumlah Buku : {{ books.length }}</p>
     <div class="book mt-5">
       <div v-for="(book, i) in books" :key="i" class="col-lg-2">
         <div class="card-body">
@@ -105,10 +106,28 @@ onMounted(() => {
   top: 0;
   bottom: 0;
   border-radius: 4px;
-  width: 100%;
-  position: sticky;
-  margin-top: 10.7%;
-  margin-bottom: 15%;
+  width: 94.4%;
+  left: 5%;
+  margin-top: 10%;
+  margin-bottom: 3%;
+}
+
+.jumlah-buku {
+  background-color: rgba(128, 128, 128, 0.75);
+  border-radius: 5px;
+  position: relative;
+  left: 5%;
+  margin: 0;
+  font-size: 40px;
+  font-weight: 500;
+  width: 89.2%;
+  border: solid 2px black;
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+  opacity: 1;
+  text-align: center;
+  font-size: 24px;
+  opacity: 1;
 }
 
 .formulir{
