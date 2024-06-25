@@ -7,7 +7,7 @@
           <form @submit.prevent="kirimData" class=" form card rounded-4">
             <h2 class="judul-form display-3">Form Pengunjung</h2>
             <div class="mb-1 p-5 pt-0 py-0">
-              <input v-model="form.nama" type="text" class="form-control" placeholder="Nama">
+              <input v-model="form.nama" type="text" class="form-control" placeholder="Nama" required>
             </div>
             <div class="mt-2 mb-1 p-5 pt-0 py-0">
               <select @change="cekKeanggotaan" v-model="form.keanggotaan" class="form-control" aria-placeholder="KATEGORI">
