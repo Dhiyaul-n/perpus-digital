@@ -1,15 +1,13 @@
 <template>
   <div class="wrapper">
     <div class="background"></div>
-      <div class="search input-group input-group-sm p-0">
-        <form class="formulir" @submit.prevent="getBooks">
+        <form class="formulir search input-group input-group-sm p-0" @submit.prevent="getBooks">
           <input v-model="keyword" type="search" class="search form-control" aria-label="Small" placeholder=" search here...">
         </form>
         <select v-model="category" id="category2" class="" @change="getBooks">
         <option :value="null">Kategori</option>
         <option v-for="(kategori, i) in kategories" :key="i" :value="kategori.id">{{ kategori.nama }}</option>
         </select>
-      </div>
       <p class="jumlah-buku">Jumlah Buku : {{ books.length }}</p>
     <div class="book mt-5">
       <div v-for="(book, i) in books" :key="i" class="col-lg-2">
@@ -86,6 +84,8 @@ onMounted(() => {
 .background {
   background-image: url('@/assets/img/search-bg.png');
   position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
   bottom: 0;
   right: 0;
@@ -95,24 +95,14 @@ onMounted(() => {
   background-position: center;
 }
 
-.formulir{
-  width: 89%;
-}
 
 .search {
   margin: 0;
   padding: 0;
-  height: 30px;
-  font-weight: 500;
-  color: black;
-  opacity: 0.9;
-  top: 0;
-  bottom: 0;
-  border-radius: 4px;
   width: 100%;
-  left: 5%;
   margin-top: 10%;
-  margin-bottom: 3%;
+  width: 89%;
+  left: 2.7%;
 }
 
 .jumlah-buku {
@@ -143,7 +133,7 @@ onMounted(() => {
   font-weight: 500;
   color: black;
   position: fixed;
-  right: 5%;
+  right: 6%;
   bottom: 3%;
   }
 
@@ -257,22 +247,34 @@ onMounted(() => {
   width: 89%;
 }
 
-.search {
-  margin: 0;
-  padding: 0;
-  height: 17px;
+  .search {
+    margin: 0;
+    padding: 0;
+    height: 17px;
+    font-weight: 500;
+    font-size: 10px;
+    color: black;
+    opacity: 0.9;
+    top: 0;
+    bottom: 0;
+    border-radius: 4px;
+    width: 80%;
+    left: 4%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+  }
+
+  .kategori{
+  background-color: #ffffff;
+  width: 50px;
+  height: 10px;
+  font-size: 6px;
+  padding-top: 0px;
+  text-align: center;
   font-weight: 500;
-  font-size: 10px;
   color: black;
-  opacity: 0.9;
-  top: 0;
-  bottom: 0;
-  border-radius: 4px;
-  width: 95%;
-  left: 7%;
-  margin-top: 5%;
-  margin-bottom: 3%;
-}
+  right: 6%;
+  }
 
   .jumlah-buku {
     font-size: 10px;

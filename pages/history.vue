@@ -333,7 +333,7 @@ td {
   
 .table-responsive {
   margin-top: 5%;
-  max-height: 300px;
+  max-height: 450px;
   width: 98%;
   right: 6%;
 }

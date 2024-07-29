@@ -7,10 +7,11 @@
           <form @submit.prevent="kirimData" class=" form card rounded-4">
             <h2 class="judul-form display-3">Form Pengunjung</h2>
             <div class="mb-1 p-5 pt-0 py-0">
-              <input v-model="form.nama" type="text" class="form-control" placeholder="Nama" required>
+              <input v-model="form.nama" type="text" class="form-control" placeholder="Nama">
             </div>
             <div class="mt-2 mb-1 p-5 pt-0 py-0">
-              <select @change="cekKeanggotaan" v-model="form.keanggotaan" class="form-control" aria-placeholder="KATEGORI">
+              <select @change="cekKeanggotaan" v-model="form.keanggotaan" class="form-control"
+                aria-placeholder="KATEGORI">
                 <option value="" disabled>KATEGORI</option>
                 <option v-for="(member, i) in members" :key="i" :value="member.id">{{ member.nama }}</option>
               </select>
@@ -36,7 +37,8 @@
                     </select>
                   </div>
                   <div class="col-md p-0">
-                    <select v-model="form.tingkat" :disabled="!form.jurusan || form.jurusan == 'TOI'" class="form-control" required>
+                    <select v-model="form.tingkat" :disabled="!form.jurusan || form.jurusan == 'TOI'"
+                      class="form-control" required>
                       <option value="" disabled>ROMBEL</option>
                       <option class="opsi" value="1">1</option>
                       <option class="opsi" value="2">2</option>
@@ -66,6 +68,15 @@
             </div>
           </form>
         </div>
+        <button type="submit" class="btn-skip">
+          <NuxtLink to="/history">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m9 5 7 7-7 7" />
+            </svg>
+          </NuxtLink>
+        </button>
       </div>
     </div>
   </div>
@@ -250,6 +261,25 @@ cover-form {
   right: 45%;
 }
 
+.btn-skip {
+  background-color: #ffffff;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Alata";
+  color: black;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  box-shadow:
+    inset -.5px -.5px .5px 0px rgba(0, 0, 0, 0.23),
+    inset .5px .5px .5px 0px rgba(255, 255, 255, 0.6);
+}
+
+
 @media screen and (max-width: 768px) {
 
   .wrapper {
@@ -279,14 +309,14 @@ cover-form {
   }
 
   .background::before {
-  background-color: rgba(0, 0, 0, 0.5);
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
 
   .card {
     background-color: rgba(255, 255, 255, 0.1);
